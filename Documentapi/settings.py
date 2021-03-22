@@ -25,7 +25,10 @@ SECRET_KEY = 'u9#&_kz0tyszzxd6renijhhk_+spi1843$-pxyh^m-l4eirf_4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -39,10 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'authentication',
     'rest_framework',
-    'knox',
+    #'knox',
     'rest_auth',
     'rest_framework.authtoken',
-    'drf_yasg'
+    'drf_yasg',
+    'uploadfilesApp',
 ]
 
 INSTALLED_APPS+= ["django_createsuperuser"]
@@ -127,8 +131,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
-
-}
