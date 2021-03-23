@@ -11,6 +11,7 @@ django-rest-auth = "*"
 django-createsuperuser = "*"
 drf-yasg = "*"
 pipfile = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 

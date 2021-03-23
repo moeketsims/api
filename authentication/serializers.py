@@ -11,7 +11,7 @@ class AccountSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         #fields = '__all__'
-        fields = ['username', 'first_name', 'last_name', 'email', 'password']
+        fields = ['id','username', 'first_name', 'last_name', 'email', 'password']
     
     def validate(self, attrs):
         email = attrs.get('email', '')

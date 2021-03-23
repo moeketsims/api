@@ -47,11 +47,15 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'drf_yasg',
     'uploadfilesApp',
+    'corsheaders',
 ]
 
-INSTALLED_APPS+= ["django_createsuperuser"]
 
 MIDDLEWARE = [
+      # CORS
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -59,9 +63,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  
 ]
 
 ROOT_URLCONF = 'Documentapi.urls'
+
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+)
 
 TEMPLATES = [
     {
